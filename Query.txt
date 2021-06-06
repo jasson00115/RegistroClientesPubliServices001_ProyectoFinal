@@ -1,0 +1,55 @@
+--exec babel-node
+
+***INGRESO***
+mutation{
+  createUser(input: {
+    negocio: "Farmacia",
+    firstname: "Rolando",
+    lastname: "Mendez",
+    precio: 299
+  }){
+    _id
+    negocio
+    firstname
+    lastname
+    precio
+  }
+}
+
+
+
+***CONSULTA***
+{
+  Users{
+    _id
+    firstname
+    lastname
+  }
+} 
+
+
+
+***BORRAR***
+mutation{
+  deleteUser(_id: "60b7281fdbb4445b08786469"){
+    _id
+    firstname
+    lastname
+  }
+}
+
+
+***ACTUALIZAR***
+mutation{
+  updateUser(
+    _id: "60b728384b77304ff419762b",
+  input: {
+    firstname: "Jasson"
+  }
+  ){
+    _id
+    firstname
+    lastname
+    age
+  }
+}
